@@ -40,6 +40,31 @@ int main(){
 		}
 	}
 
-    
+    error = 0.001;
+	while (error >= 0.0001)
+	{
+		// Copiando u a un arreglo temporal
+		u_old = u;
+
+		// Calculando nuevo u
+		for (int i = 1; i <= nx - 2; i++)
+		{
+			u[i] = (r*u_old[i - 1]) + ((1 - (2 * r))*u_old[i]) + (r*u_old[i + 1]);
+		}
+
+		// Calculando error
+
+		for (int i = 0; i <= nx - 1; i++)
+		{
+			double de = abs(u[i] - u_old[i]);	// Error Absoluto
+			error = max(error, de);			// Error Maximum 
+            // printf("U: %f \n", u[i]);
+            // printf("U_OLD: %f \n", u_old[i]);
+            // printf("Absolute Error: %f", de);
+            // printf("Error: %f", error);
+		}
+		
+        // break;
+	}
 
 }

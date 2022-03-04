@@ -31,4 +31,15 @@ int main(){
 	vector<double> u(nx);               // Vector solución
 	vector<double> u_old(nx);           // Vector solución
 
+    // Inicializar el Vector U
+	for (int i = 1; i <= nx - 1; ++i){
+        if (i*dx >= 0.0 && i*dx <= 0.5){
+			u[i] = 2 * i*dx;
+		} else if (i*dx >= 0.5&&i*dx <= 1.0){
+			u[i] = 2 * (1 - (i*dx));
+		}
+	}
+
+    
+
 }

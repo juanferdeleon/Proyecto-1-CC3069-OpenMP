@@ -18,6 +18,7 @@ Cristopher Barrios                  18
 #include<vector>
 using namespace std;
 
+
 int main(){
 
     //Declaring variable

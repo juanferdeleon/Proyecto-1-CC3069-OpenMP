@@ -33,21 +33,21 @@ double Tj(double prev, double current, double next) {
 int main(int argc, char *argv[]){
 	
 	//Declaring variables
-	double err, T_0, T_L, T_R, sum;
-    int N, n = 0;
+	double err = 0.1, T_0 = 100, T_L = 0, T_R = 60, sum;
+    int N=1000, n = 0;
     double calcErr = 1e-25;
 
-	printf("\n\n\tProyecto 1\n");
-    printf("\n\nPrecision o diferencia requerida: ");
-    scanf("%lf", &err);
-    printf("Numero de intervalos discretos: ");
-    scanf("%d", &N);
-    printf("Temperatura inicial de toda la barra: ");
-    scanf("%lf", &T_0);
-    printf("Temperatura en la frontera izquierda (x=0): ");
-    scanf("%lf", &T_L);
-    printf("Temperatura en la frontera derecha (x=L): ");
-    scanf("%lf", &T_R);
+	// printf("\n\n\tProyecto 1\n");
+    // printf("\n\nPrecision o diferencia requerida: ");
+    // scanf("%lf", &err);
+    // printf("Numero de intervalos discretos: ");
+    // scanf("%d", &N);
+    // printf("Temperatura inicial de toda la barra: ");
+    // scanf("%lf", &T_0);
+    // printf("Temperatura en la frontera izquierda (x=0): ");
+    // scanf("%lf", &T_L);
+    // printf("Temperatura en la frontera derecha (x=L): ");
+    // scanf("%lf", &T_R);
 
 	// Vector Solucion
 	double temperature[N], temperatureCopy[N];
@@ -90,15 +90,15 @@ int main(int argc, char *argv[]){
     
     int ctr = 0;
 
-	// Mostrar resultados
-    for (int i = 0; i < N; i++) {
-        if (ctr%4 == 0) {
-            printf("%lf \n", temperature[i]);
-        } else {
-            printf("%lf \t", temperature[i]);
-        }
-        ctr += 1;
-	}
+	// // Mostrar resultados
+    // for (int i = 0; i < N; i++) {
+    //     if (ctr%4 == 0) {
+    //         printf("%lf \n", temperature[i]);
+    //     } else {
+    //         printf("%lf \t", temperature[i]);
+    //     }
+    //     ctr += 1;
+	// }
 
 	// Elapsed Time
     gettimeofday(&end, 0);

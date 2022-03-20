@@ -75,7 +75,8 @@ int main(int argc, char *argv[]){
 			temperatureCopy[j] = Tj(temperature[j - 1], temperature[j], temperature[j + 1]);
 		}
 
-		// Actualizar array de solucion y calcular el err actual
+		// Update vector
+        // Calc err
 		sum = 0.0;
 		for (int k = 1; k < N - 1; k++) {
 			sum += temperatureCopy[k] - temperatureCopy[k - 1];
@@ -87,9 +88,16 @@ int main(int argc, char *argv[]){
 
     }
     
+    int ctr = 0;
+
 	// Mostrar resultados
     for (int i = 0; i < N; i++) {
-		printf("%lf \n", temperature[i]);
+        if (ctr%4 == 0) {
+            printf("%lf \n", temperature[i]);
+        } else {
+            printf("%lf \t", temperature[i]);
+        }
+        ctr += 1;
 	}
 
 	// Elapsed Time
@@ -99,6 +107,6 @@ int main(int argc, char *argv[]){
     long microseconds = end.tv_usec - begin.tv_usec;
     double elapsed = seconds + microseconds * 1e-6;
     
-	printf("Elapsed Time: %.3f seg.\n", elapsed);
+	printf("\nElapsed Time: %.3f seg.\n", elapsed);
 
 }
